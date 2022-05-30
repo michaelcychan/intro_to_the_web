@@ -1,5 +1,16 @@
 <% name2 = ["Alex", "Leo"].sample %>
-<h1>My name is <%= @name %>. Are you <%= name2 %> </h1>
+Tutor is <%= name2 %>
+
+<% if @name && @last %>
+<h1>My name is <%= @name %> <%= @last %>.  </h1>
+<% end %>
+
+<form action="/named-cat">
+  <input type="text" name="name">
+  <input type="text" name="last_name">
+  <input type="submit" value="Submit">
+</form>
+
 <div style='border: 3px dashed red'>
   <img src='http://placekitten.com/500/500'>
 </div>
