@@ -23,9 +23,15 @@ get '/random-cat' do
   erb(:index)
 end
 
-get '/named-cat' do
+post '/named-cat' do
   p params
   @name = params[:name]
   @last = params[:last_name]
   erb(:index)
+end
+
+# in app.rb
+# first, let's write a form-displaying route
+get '/cat-form' do
+  erb :cat_form
 end
