@@ -19,5 +19,6 @@ get '/new_route' do
 end
 
 get '/cat' do
+  @name = ["Amigo", "Misty", "Almond"].sample
   erb(:index)
 end
