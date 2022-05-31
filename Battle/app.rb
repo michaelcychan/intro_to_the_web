@@ -8,7 +8,13 @@ class Battle < Sinatra::Base
 
   # our routes would go here
   get '/' do
-    'Hello Battle!'
+    erb(:index)
+  end
+
+  post '/names' do
+    @player_1_name = params[:player_1_name]
+    @player_2_name = params[:player_2_name]
+    erb(:play)
   end
   
   # # Start the server if this file is executed directly (do not change the line below)
