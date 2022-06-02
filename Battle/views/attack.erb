@@ -1,5 +1,7 @@
 <!-- in views/attack.erb -->
 
+<%= @game.whose_turn.name %>'s turn
+<br>
 <%= @game.player_1.name %> attacked <%= @game.player_2.name %>
 
 <%= @game.player_2.name %>: <%= @game.player_2.hit_points %>HP

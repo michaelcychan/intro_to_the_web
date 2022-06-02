@@ -22,4 +22,17 @@ describe Game do
       game.attack(player_2)
     end
   end
+
+  describe '#switch_turn' do
+    it 'switches turn from Player 1 to Player 2' do
+      game.switch_turn
+      expect(game.whose_turn).to eq player_2
+    end
+
+    it 'switches back from Player 2 to Player 1' do
+      game.switch_turn
+      game.switch_turn
+      expect(game.whose_turn).to eq player_1
+    end
+  end
 end
