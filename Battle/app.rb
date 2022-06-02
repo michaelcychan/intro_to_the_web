@@ -4,6 +4,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/game'
 require './lib/player'
+require './lib/attack'
 
 class Battle < Sinatra::Base
 
@@ -33,10 +34,14 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game = $game
-    @game.attack(@game.player_2)
-    @game.switch_turn
+    Attack.run(@game.another_player)
     erb(:attack)
   end  
+
+  post '/switch_turn' do
+    $game.switch_turn
+    redirect('/play')
+  end
   
   # # Start the server if this file is executed directly (do not change the line below)
   run! if app_file == $0

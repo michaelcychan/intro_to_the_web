@@ -16,12 +16,13 @@ describe Game do
     end
   end
 
-  describe '#attack' do
-    it 'damages opponent' do
-      expect(player_2).to receive(:receive_damage)
-      game.attack(player_2)
-    end
-  end
+  # refactored to another class, this test obsolete
+  # describe '#attack' do
+  #   it 'damages opponent' do
+  #     expect(player_2).to receive(:receive_damage)
+  #     game.attack(player_2)
+  #   end
+  # end
 
   describe '#switch_turn' do
     it 'switches turn from Player 1 to Player 2' do
