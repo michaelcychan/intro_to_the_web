@@ -8,7 +8,6 @@ require './lib/attack'
 
 class Battle < Sinatra::Base
 
-
   configure :development do
     register Sinatra::Reloader
   end
